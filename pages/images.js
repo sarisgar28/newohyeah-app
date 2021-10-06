@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
+import Pagination from 'next-pagination'
 
 
 export const getStaticProps = async() =>{
@@ -47,7 +48,9 @@ function Images({images}){
                     <img src={image.url}/>
              </div>
            ))}
+          <Pagination total={1000}/>
         </ul>
+      
        
     )
 }

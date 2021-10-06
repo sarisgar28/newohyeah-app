@@ -8,12 +8,6 @@ export default function Home() {
       <Head>
       <h1>Home</h1>
       </Head>
-     
-      <li>
-        <Link href="/">
-          <a>HOME</a>
-        </Link>
-      </li>
       <li>
         <Link href="/images">
           <a>IMAGES</a>
