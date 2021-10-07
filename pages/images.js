@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
-import Pagination from 'next-pagination'
+
+
 
 
 export const getStaticProps = async() =>{
@@ -28,16 +29,16 @@ function Images({images}){
         return <h1>Loading...</h1>
     }
     // this includes setting the noindex header because static files alwaysreturn a status 200.
-    if(images.length === 0){
-        return 
-        <>
-        <Head>
-            <meta name="robots" content="noindex"/>
-        </Head>
-        <DefaultErrorPage statusCode={404}/>
+    // if(images.length === 0){
+    //     return 
+    //     <>
+    //     <Head>
+    //         <meta name="robots" content="noindex"/>
+    //     </Head>
+    //     <DefaultErrorPage statusCode={404}/>
      
-        </>
-    }
+    //     </>
+    // }
     // defaultErrorPage creates a 404 error 
     return (
         <ul>
@@ -48,7 +49,7 @@ function Images({images}){
                     <img src={image.url}/>
              </div>
            ))}
-          <Pagination total={1000}/>
+         
         </ul>
       
        
