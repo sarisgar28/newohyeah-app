@@ -25,7 +25,7 @@ function Search (){
         <div>
             <h3 className="title"> Images</h3>
             <input type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)}/>
-        <images images={data.images}/>
+        <images images={data}/>
         </div>
     )
       
