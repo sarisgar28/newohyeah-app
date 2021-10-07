@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+
 export const getStaticProps = async() =>{
     const res = await fetch('https://jsonplaceholder.typicode.com/photos');
     const data = await res.json();
@@ -25,8 +26,9 @@ function Search ({images}){
           <a>HOME</a>
          </Link>
          </li>
+            <h2>PLease insert a Title:</h2>
             <form onSubmit={form}>
-                <label for="title">Title</label>
+                <label for="title">Title: </label>
                 <input id="title" type="text"/>
                 <button type="submit">Submit</button>
             </form>

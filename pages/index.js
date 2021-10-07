@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       
       <Head>
-      <h1>HOME</h1>
+      <h1>HOME!</h1>
       </Head>
       <li>
         <Link href="/images">
