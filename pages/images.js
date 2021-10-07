@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import DefaultErrorPage from 'next/error'
+import Link from 'next/link'
 
 
 
@@ -41,16 +42,26 @@ function Images({images}){
     }
     // defaultErrorPage creates a 404 error 
     return (
-        <ul>
-            <h1>Images</h1>
+        <div>
+         
+            <ul>
+            <li>
+         <Link href="/">
+          <a>HOME</a>
+         </Link>
+         </li>
+            <h1>IMAGES</h1>
             {images.map(image =>(
               <div key={image.id}> 
-                   <li>{image.title}</li>
+                   <li>Title: {image.title}</li>
                     <img src={image.url}/>
              </div>
            ))}
          
-        </ul>
+        </ul> 
+        </div>
+       
+
       
        
     )

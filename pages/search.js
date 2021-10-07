@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export const getStaticProps = async() =>{
     const res = await fetch('https://jsonplaceholder.typicode.com/photos');
     const data = await res.json();
@@ -18,13 +20,18 @@ function Search ({images}){
     }
     return (
         <div>
+         <li>
+         <Link href="/">
+          <a>HOME</a>
+         </Link>
+         </li>
             <form onSubmit={form}>
                 <label for="title">Title</label>
                 <input id="title" type="text"/>
                 <button type="submit">Submit</button>
             </form>
 
-            <h1>Result</h1>
+            <h1>Results</h1>
             {images.map(image =>(
               <div key={image.id}> 
                    <li>{image.title}</li>
@@ -35,7 +42,9 @@ function Search ({images}){
         </div>
     )
       
-// next step would be find by id and display the result
+// next steps would be find by id and display the result
+// fix the link 
+
     
 }
 export default Search;

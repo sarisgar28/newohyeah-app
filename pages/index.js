@@ -2,11 +2,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 
+
 export default function Home() {
   return (
     <div>
+      
       <Head>
-      <h1>Home</h1>
+      <h1>HOME</h1>
       </Head>
       <li>
         <Link href="/images">
