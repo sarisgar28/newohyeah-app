@@ -13,6 +13,11 @@ export default function Home() {
           <a>IMAGES</a>
         </Link>
       </li>
+      <li>
+        <Link href="/search">
+          <a>SEARCH</a>
+        </Link>
+      </li>
     </div>
   )
 }
