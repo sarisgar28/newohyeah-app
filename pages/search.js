@@ -23,10 +23,11 @@ function Search (){
                 <input id="title" type="text"/>
                 <button type="submit">Submit</button>
             </form>
+           
         </div>
     )
       
-       
+// next step would be find by id and display the result
     
 }
 export default Search;
