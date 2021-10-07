@@ -1,15 +1,33 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 html,
 body {
   padding: auto;
   margin: auto;
   font-family: 'Architects Daughter', cursive;
+  background-color: rgb(105, 45, 161);
+
+  
 }
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
 
 a {
   color: inherit;
   text-decoration: none;
+  
 }
 
 * {
   box-sizing: border-box;
 }
+

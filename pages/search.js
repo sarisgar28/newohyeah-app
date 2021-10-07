@@ -1,20 +1,20 @@
-
-
-function Search (){
+export const getStaticProps = async() =>{
+    const res = await fetch('https://jsonplaceholder.typicode.com/photos');
+    const data = await res.json();
+    if(!data){
+        return{
+            notFound: true,
+        }
+    }
+    return{
+      props: {
+        images: data
+      }
+    }
+}
+function Search ({images}){
     const form =  async event => {
         event.preventDefault();
-
-        const res = await fetch('https://jsonplaceholder.typicode.com/photos',{
-            body: JSON.stringify({
-                title: event.target.title.value
-            }),
-            headers:{
-                'Content-Type' : 'application/json'
-            },
-            method: 'POST'
-        } );
-        const result = await res.json()
-        
     }
     return (
         <div>
@@ -23,6 +23,14 @@ function Search (){
                 <input id="title" type="text"/>
                 <button type="submit">Submit</button>
             </form>
+
+            <h1>Result</h1>
+            {images.map(image =>(
+              <div key={image.id}> 
+                   <li>{image.title}</li>
+                    <img src={image.url}/>
+             </div>
+           ))}
            
         </div>
     )
