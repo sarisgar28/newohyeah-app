@@ -21,11 +21,11 @@ function Search ({images}){
     }
     return (
         <div>
-         <li>
+         
          <Link href="/">
-          <a>HOME</a>
+          <a>GO BACK</a>
          </Link>
-         </li>
+
             <h2>PLease insert a Title:</h2>
             <form onSubmit={form}>
                 <label for="title">Title: </label>
@@ -46,6 +46,7 @@ function Search ({images}){
       
 // next steps would be find by id and display the result
 // fix the link 
+// validations 
 
     
 }
