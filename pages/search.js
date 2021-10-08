@@ -1,5 +1,17 @@
 import Link from 'next/link'
 
+// export async function getStaticPaths(){
+//     // it calls the API endpoint to get the photos
+//     const res = await fetch(`https://jsonplaceholder.typicode.com/photos`);
+//     const photos = await res.json()
+// // get the paths we want to pre-render 
+// const paths = photos.map((photo)=>{
+//     params: {id: photo.id}
+// })
+// return {paths, fallback: false}
+// // fallback: false means other routes should get an error 404
+// }
+
 
 export const getStaticProps = async() =>{
     const res = await fetch('https://jsonplaceholder.typicode.com/photos');
@@ -15,6 +27,8 @@ export const getStaticProps = async() =>{
       }
     }
 }
+
+
 function Search ({images}){
     const form =  async event => {
         event.preventDefault();
@@ -43,11 +57,9 @@ function Search ({images}){
            
         </div>
     )
-      
+}
 // next steps would be find by id and display the result
 // fix the link 
 // validations 
 
-    
-}
-export default Search;
+    export default Search;
