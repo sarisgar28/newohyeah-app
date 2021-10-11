@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useState } from 'react';
 
 // export async function getStaticPaths(){
 //     // it calls the API endpoint to get the photos
@@ -28,11 +29,17 @@ export const getStaticProps = async() =>{
     }
 }
 
-
-function Search ({images}){
-    const form =  async event => {
-        event.preventDefault();
+function handleInputChange(){
+    const query = useState();
+    query: Search.value
+    if(query && query.length > 1){
+        if(query.length % 2 === 0 ){
+            getStaticProps;
+        }
     }
+}
+function Search ({images}){
+    
     return (
         <div>
          
@@ -41,7 +48,7 @@ function Search ({images}){
          </Link>
 
             <h2>PLease insert a Title:</h2>
-            <form onSubmit={form}>
+            <form onSubmit={handleInputChange}>
                 <label for="title">Title: </label>
                 <input id="title" type="text"/>
                 <button type="submit">Submit</button>
