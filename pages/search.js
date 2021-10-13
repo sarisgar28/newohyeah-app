@@ -1,17 +1,8 @@
 import Link from 'next/link'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-// export async function getStaticPaths(){
-//     // it calls the API endpoint to get the photos
-//     const res = await fetch(`https://jsonplaceholder.typicode.com/photos`);
-//     const photos = await res.json()
-// // get the paths we want to pre-render 
-// const paths = photos.map((photo)=>{
-//     params: {id: photo.id}
-// })
-// return {paths, fallback: false}
-// // fallback: false means other routes should get an error 404
-// }
+
+
 
 
 export const getStaticProps = async() =>{
@@ -24,22 +15,21 @@ export const getStaticProps = async() =>{
     }
     return{
       props: {
-        images: data
+       images: data
       }
     }
 }
 
-function handleInputChange(){
-    const query = useState();
-    query: Search.value
-    if(query && query.length > 1){
-        if(query.length % 2 === 0 ){
-            getStaticProps;
-        }
-    }
-}
+
+
+
 function Search ({images}){
-    
+   
+    const handleSubmit = (event) => {
+        const items = [];
+        event.preventDefault()
+        
+    }
     return (
         <div>
          
@@ -48,7 +38,7 @@ function Search ({images}){
          </Link>
 
             <h2>PLease insert a Title:</h2>
-            <form onSubmit={handleInputChange}>
+            <form onSubmit={handleSubmit}>
                 <label for="title">Title: </label>
                 <input id="title" type="text"/>
                 <button type="submit">Submit</button>
@@ -56,7 +46,7 @@ function Search ({images}){
 
             <h1>Results</h1>
             {images.map(image =>(
-              <div key={image.id}> 
+              <div key={image.id}>  
                    <li>{image.title}</li>
                     <img src={image.url}/>
              </div>
